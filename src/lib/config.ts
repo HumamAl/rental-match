@@ -44,9 +44,9 @@ export type AestheticProfile =
 //   web3 / crypto        → dark-premium | retrofuturism
 
 export const APP_CONFIG = {
-  appName: "App Name",                       // Display name (sidebar header, page title)
-  projectName: "Project Name",               // Client's product name (tab bar microtext, footer)
-  clientName: null as string | null,         // Client first name, or null — never render "null"
-  domain: "tech",                            // Domain (finance, health, marketplace, tech, etc.)
-  aesthetic: "linear" as AestheticProfile,   // Drives data-theme="..." on <html>
+  appName: "RentalMatch",                            // Display name (sidebar header, page title)
+  projectName: "Reverse Search Marketplace",         // Client's product name (tab bar microtext, footer)
+  clientName: null as string | null,                 // Client first name, or null — never render "null"
+  domain: "marketplace",                             // Domain (finance, health, marketplace, tech, etc.)
+  aesthetic: "saas-modern" as AestheticProfile,      // Drives data-theme="..." on <html>
 } as const;

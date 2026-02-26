@@ -101,22 +101,21 @@
   --surface-hover: oklch(0.96 0 0);
   --surface-active: oklch(0.94 0 0);
 
-  /* ── Primary Color ───────────────────────────────────────────
-     !! OVERRIDE REQUIRED — Layout Builder must replace --primary and
-        --primary-h with domain-appropriate oklch values.
-        See references/design-system.md for the 14-domain color table.
-        QA rejects builds where --primary stays oklch(0.205 0 0). !! */
-  --primary: oklch(0.205 0 0);
+  /* ── AESTHETIC: saas-modern / DOMAIN: marketplace (PropTech) ────────────
+     Primary: amber at oklch(0.72 0.16 80) — warm, consumer-energetic
+     Hue: 80 (amber/gold)
+     SaaS Modern: approachable, trustworthy, conversion-focused              */
+  --primary: oklch(0.65 0.17 80);
   --primary-foreground: oklch(0.985 0 0);
-  --primary-h: 270; /* Integer hue extracted from --primary */
+  --primary-h: 80; /* Integer hue extracted from --primary */
 
   /* ── Derived Color Tokens ────────────────────────────────── */
   --section-dark: oklch(0.10 0.02 var(--primary-h));
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.97 0.005 80);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --muted: oklch(0.97 0.003 80);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: oklch(0.94 0.04 80);
   --accent-foreground: oklch(0.205 0 0);
 
   /* ── Semantic Colors ─────────────────────────────────────── */
@@ -127,29 +126,30 @@
   --warning-foreground: oklch(0.205 0 0);
 
   /* ── Borders & Inputs ────────────────────────────────────── */
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.922 0.005 80);
+  --input: oklch(0.922 0.005 80);
+  --ring: oklch(0.65 0.17 80);
 
   /* ── Chart Colors ────────────────────────────────────────────
-     Layout Builder harmonizes to primary hue. See design-system.md. */
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+     Harmonized to amber hue (80) — warm color family             */
+  --chart-1: oklch(0.65 0.17 80);   /* amber primary */
+  --chart-2: oklch(0.60 0.15 55);   /* warm orange */
+  --chart-3: oklch(0.55 0.14 100);  /* yellow-green */
+  --chart-4: oklch(0.62 0.13 45);   /* terracotta */
+  --chart-5: oklch(0.70 0.12 70);   /* golden yellow */
 
   /* ── Sidebar Colors ──────────────────────────────────────────
      After color override: --sidebar-primary and --sidebar-ring
      should match --primary.                                     */
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: oklch(0.99 0.005 80);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.65 0.17 80);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.95 0.015 80);
   --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-border: oklch(0.918 0.008 80);
+  --sidebar-ring: oklch(0.65 0.17 80);
+  --sidebar-bg: oklch(0.99 0.005 80);
 
   /* ── Surface / Card Tokens ───────────────────────────────────
      Driven by [data-theme] aesthetic — not overridden per domain.
@@ -753,6 +753,26 @@
   --dur-normal: 120ms;
   --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
   --t-interactive: var(--dur-fast) var(--ease-snappy);
+}
+
+/* ============================================================
+   ANIMATION KEYFRAMES
+   ============================================================ */
+@keyframes fade-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up-in {
+  animation-name: fade-up-in;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
 }
 
 /* ============================================================
