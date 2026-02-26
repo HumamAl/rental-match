@@ -1,6 +1,6 @@
 Hi,
 
-Your reverse search model — Property Managers browsing anonymized Rental Resumes, with eviction and felony history hidden behind a "View Disclosures" compliance gate — I built a working version of this before reaching out: {VERCEL_URL}
+Your reverse search model — Property Managers browsing anonymized Rental Resumes, with eviction and felony history hidden behind a "View Disclosures" compliance gate — I built a working version of this before reaching out: https://rental-match-two.vercel.app
 
 The demo shows dual dashboards, radius-based tenant search, and the Fair Housing acknowledgement step before any sensitive history is visible.
 
